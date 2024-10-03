@@ -1,4 +1,4 @@
-const Todo = require('../models/todoModel');  // Import your Todo model
+const Todo = require('../../models/todoModel');  // Import your Todo model
 
 // Get all todos
 const getTodos = async (req, res) => {

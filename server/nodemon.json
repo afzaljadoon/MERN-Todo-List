@@ -1,4 +1,5 @@
 {
-    "watch": ["server.js", "routes"],
-    "ignore": ["node_modules", "client"]
-  }
+  "watch": ["server.js", "routes"],
+  "ext": "js",
+  "exec": "node Server.js"
+}
