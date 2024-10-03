@@ -6,19 +6,17 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
-
 // Middleware
-app.use(express.json());
+app.use(cors());
+app.use(express.json()); // Middleware to parse JSON
 
 // MongoDB connection
-// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
-  .catch((error) => console.error('Failed to connect to MongoDB:', error));  // Use .catch() to handle errors
+  .catch((error) => console.error('Failed to connect to MongoDB:', error));
 
 // Routes
-app.use('/api/todos', todoRoutes); // Make sure this matches the routes in todoRoutes.js
+app.use('/api/todos', todoRoutes); // This matches the routes in todoRoutes.js
 
 // Start the server
 const PORT = process.env.PORT || 5000;

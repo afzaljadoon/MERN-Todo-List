@@ -4,10 +4,8 @@ const { getTodos, createTodo, deleteTodo } = require('../controllers/todoControl
 const router = express.Router();
 
 // Define routes
-router.get('/', getTodos);  // Correctly assign the callback function
-router.post('/', createTodo);  // Correctly assign the callback function
-router.delete('/:id', deleteTodo);  // Correctly assign the callback function
+router.get('/', getTodos);  // Route to get all todos
+router.post('/', createTodo);  // Route to create a new todo
+router.delete('/:id', deleteTodo);  // Route to delete a todo by ID
 
 module.exports = router;
-
-
